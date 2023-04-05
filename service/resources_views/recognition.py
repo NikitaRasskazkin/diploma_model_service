@@ -37,7 +37,7 @@ class Recognition(Resource):
         """Perform recognition of paraphrased sentences in the text"""
         text = data.text
         start_time = time.time()
-        result = RecognitionManager.model.get_recognition(text)
+        result = RecognitionManager.model.predict(text)
         recognition_time = time.time() - start_time
         return json_success_response({
             'version': RecognitionManager.model.version,
